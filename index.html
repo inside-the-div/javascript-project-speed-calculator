@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/common.css">
+    <title>Speed Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1><i>Speed Calculator</i></h1>
+        <div class="container-feild-group">
+            
+            <div id="speedInput" class="container-feild">             
+                <div class="input-group">
+                    <label for="distance" class="input-label">Distance:</label>
+                    <input placeholder="Distance (km)"  type="number"  min="0" id="distance" class="input-feild">
+                </div>
+                <div class="input-group">
+                    <label for="time" class="input-label">Time:</label>
+                    <input placeholder="Time (hour)" type="number"  min ="0" id="time" max="100" class="input-feild">
+                </div>
+                <div class="input-group">
+                    <label for="speed" class="input-label">Speed:</label>
+                    <input placeholder="Speed (km/h)" type="number"  min ="0" id="speed" max="100" class="input-feild">
+                </div>                
+                <div class="input-group">
+                    <button id="btnReset" class="btn btn-reset">Reset</button>
+                    <button id="btnCalculator" class="btn btn-calculate">Calculate</button>
+                </div>        
+            </div>
+
+            <div id="speedOutput" class="container-feild">              
+                <div id="OutputInfo" class="output-information output-box">
+                    <ul>
+                        <li><b>Distance</b> must be in kilometer.</li>
+                        <li><b>Time</b> must be in hour.</li>
+                        <li><b>Speed</b> must be in kilometer per hour.</li>
+                    </ul>
+                </div>
+                <div id="OutputResult" class="output-results output-box">
+                    <h2>Result</h2>
+                    <table class="output-table">
+                        <tr>
+                            <td>Result</td>
+                            <td>:</td>
+                            <td><span id="speedResult">00</span></td>
+                        </tr>                      
+                    </table>
+                </div>
+            </div>            
+        </div>
+        <div class="author-intro">
+            <p>Develop By <i><a href="#">Kamrul Hasan</a></i> & Powered By <i><a href="#">Bx-Coder</a></i></p>
+        </div>
+    </div>    
+</body>
+</html>
