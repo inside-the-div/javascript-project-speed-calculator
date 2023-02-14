@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/common.css">
+    <link rel="stylesheet" href="../common-assets/css/project-common-css.css">
     <title>Speed Calculator</title>
 </head>
 <body>
@@ -26,12 +26,12 @@
                     <input placeholder="Speed (km/h)" type="number"  min ="0" id="speed" max="100" class="input-feild">
                 </div>                
                 <div class="input-group">
-                    <button id="btnReset" class="btn btn-reset">Reset</button>
-                    <button id="btnCalculator" class="btn btn-calculate">Calculate</button>
+                    <button onclick="SpeedCalculatorReset()" id="btnReset" class="btn btn-reset">Reset</button>
+                    <button onclick="SpeedCalculation()" id="btnCalculator" class="btn btn-calculate">Calculate</button>
                 </div>        
             </div>
 
-            <div id="speedOutput" class="container-feild">              
+            <div  id="speedOutput" class="container-feild">              
                 <div id="OutputInfo" class="output-information output-box">
                     <ul>
                         <li><b>Distance</b> must be in kilometer.</li>
@@ -43,7 +43,7 @@
                     <h2>Result</h2>
                     <table class="output-table">
                         <tr>
-                            <td>Result</td>
+                            <td><span id="speedName">Value</span></td>
                             <td>:</td>
                             <td><span id="speedResult">00</span></td>
                         </tr>                      
@@ -52,8 +52,10 @@
             </div>            
         </div>
         <div class="author-intro">
-            <p>Develop By <i><a href="#">Kamrul Hasan</a></i> & Powered By <i><a href="#">Bx-Coder</a></i></p>
+            <p>Develop By <i><a href="https://www.linkedin.com/in/kamrul-hasan100" target="_blank">Kamrul Hasan</a></i> & Powered By <i><a href="https://www.insidethediv.com/" target="_blank">InsideTheDiv</a></i></p>
         </div>
-    </div>    
+    </div>
+    <script src="../common-assets/js/project-common-js.js"></script>
+    <script src="js/speed-calculator-js.js"></script>  
 </body>
 </html>
