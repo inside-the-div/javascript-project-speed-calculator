@@ -75,8 +75,8 @@ function SpeedCalculatorReset()
     document.getElementById("distance").value = "";
     document.getElementById("time").value = "";
     document.getElementById("speed").value = "";
-    document.getElementById("").innerHTML = "Value";
-    document.getElementById("").innerHTML = "0.00";
+    document.getElementById("speedName").innerHTML = "Value";
+    document.getElementById("speedResult").innerHTML = "0.00";
     RemoveAllErrorMessage();
 }
 
@@ -124,7 +124,7 @@ function SpeedCalculation()
         else
         {
             document.getElementById("speedName").innerHTML = "Result";
-            document.getElementById("speedResult").innerHTML = "You already have all value";
+            document.getElementById("speedResult").innerHTML = "N/A";
         }
     }
 }
