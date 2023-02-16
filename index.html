@@ -10,29 +10,34 @@
 </head>
 <body>
     <div class="container">
-        <h1><i>Speed Calculator</i></h1>
+        <h1>Speed Calculator</h1>
         <div class="container-feild-group">
-            
             <div id="speedInput" class="container-feild">             
+                
                 <div class="input-group">
                     <label for="distance" class="input-label">Distance:</label>
                     <input placeholder="Distance (km)"  type="number"  min="0" id="distance" class="input-feild">
                 </div>
+                
                 <div class="input-group">
                     <label for="time" class="input-label">Time:</label>
                     <input placeholder="Time (hour)" type="number"  min ="0" id="time" max="100" class="input-feild">
                 </div>
+              
                 <div class="input-group">
                     <label for="speed" class="input-label">Speed:</label>
                     <input placeholder="Speed (km/h)" type="number"  min ="0" id="speed" max="100" class="input-feild">
                 </div>                
+               
                 <div class="input-group">
                     <button onclick="SpeedCalculatorReset()" id="btnReset" class="btn btn-reset">Reset</button>
                     <button onclick="SpeedCalculation()" id="btnCalculator" class="btn btn-calculate">Calculate</button>
-                </div>        
+                </div>    
+
             </div>
 
             <div  id="speedOutput" class="container-feild">              
+                
                 <div id="OutputInfo" class="output-information output-box">
                     <ul>
                         <li><b>Distance</b> must be in kilometer.</li>
@@ -40,6 +45,7 @@
                         <li><b>Speed</b> must be in kilometer per hour.</li>
                     </ul>
                 </div>
+               
                 <div id="OutputResult" class="output-results output-box">
                     <h2>Result</h2>
                     <table id="resultTable" class="output-table">
@@ -50,13 +56,18 @@
                         </tr>
                     </table>
                 </div>
+                
             </div>            
         </div>
+
         <div class="author-intro">
             <p>Develop By <i><a href="https://www.linkedin.com/in/kamrul-hasan100" target="_blank">Kamrul Hasan</a></i> & Powered By <i><a href="https://www.insidethediv.com/" target="_blank">InsideTheDiv</a></i></p>
         </div>
+
     </div>
+
     <script src="../common-assets/js/project-common-js.js"></script>
     <script src="js/speed-calculator-js.js"></script>  
+    
 </body>
 </html>

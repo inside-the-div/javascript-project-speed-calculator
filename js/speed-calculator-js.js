@@ -1,5 +1,4 @@
-document.getElementById("OutputResult").style = "display: none";
-document.getElementById("OutputInfo").style = "display: flex";
+_cmnHideElement("OutputResult");
 
 function SpeedCalculatorFormValidate()
 {
@@ -10,58 +9,29 @@ function SpeedCalculatorFormValidate()
     var speed = document.getElementById("speed").value;
 
  
-    if(IsInputFieldEmpty("distance"))
-    {
-        ShowErrorMessageBottomOfTheInputFiled("distance", "Enter a value.");
-        validDistance = false;
-    }
-    else if(isNaN(distance))
+    if(IsInputFieldEmpty("distance") || (isNaN(distance) && distance <= 0))
     {
         ShowErrorMessageBottomOfTheInputFiled("distance", "Enter correct value.");
         validDistance = false;
     }
     
-    if(parseFloat(distance) < 1)
-    {
-        ShowErrorMessageBottomOfTheInputFiled("distance", "Enter correct value.");
-        validDistance = false;
-    }
-    
-    if(IsInputFieldEmpty("time"))
-    {
-        ShowErrorMessageBottomOfTheInputFiled("time", "Enter a value.");
-        validTime = false;
-    }   
-    else if(isNaN(time))
+    if(IsInputFieldEmpty("time") || (isNaN(time) && time <= 0))
     {
         ShowErrorMessageBottomOfTheInputFiled("time", "Enter correct value.");
         validTime = false;
-    }
+    }   
     
-    if((parseFloat(time)) < 1)
+    if(IsInputFieldEmpty("speed") || (isNaN(speed) && speed <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("time", "Enter correct value.");
-        validTime = false;
-    }
-
-    if(IsInputFieldEmpty("speed"))
-    {
-        ShowErrorMessageBottomOfTheInputFiled("speed", "Enter a value.");
+        ShowErrorMessageBottomOfTheInputFiled("speed", "Enter correct value.");
         validSpeed = false;
     }   
-    else if(isNaN(speed))
-    {
-        ShowErrorMessageBottomOfTheInputFiled("speed", "Enter correct value.");
-        validSpeed = false;
-    }
-    
-    if((parseFloat(speed)) < 1)
-    {
-        ShowErrorMessageBottomOfTheInputFiled("speed", "Enter correct value.");
-        validSpeed = false;
-    }
 
-    if(validDistance == true && validSpeed == true || validDistance == true && validTime == true || validTime == true && validSpeed == true)
+    if(
+        validDistance == true && validSpeed == true 
+        || validDistance == true && validTime == true 
+        || validTime == true && validSpeed == true
+      )
     {
         RemoveAllErrorMessage();
         return true;
@@ -75,14 +45,15 @@ function SpeedCalculatorReset()
     document.getElementById("distance").value = "";
     document.getElementById("time").value = "";
     document.getElementById("speed").value = "";
-    document.getElementById("speedName").innerHTML = "Value";
-    document.getElementById("speedResult").innerHTML = "0.00";
+    
     RemoveAllErrorMessage();
+
+    _cmnHideElement("OutputResult");
+    _cmnShowElement("OutputInfo", "flex");
 }
 
 function SpeedCalculation()
 {
-    var count = 0;
     var distance = document.getElementById("distance").value;
     var speed = document.getElementById("speed").value;
     var time = document.getElementById("time").value;
@@ -90,13 +61,6 @@ function SpeedCalculation()
 
     if(SpeedCalculatorFormValidate())
     {
-        if(count == 0)
-        {
-            document.getElementById("OutputInfo").style = "display: none";
-            document.getElementById("OutputResult").style = "display: flex";
-            count++;
-        }
-
         if(distance == "")
         {
             calculatedDistance = speed * time;
@@ -126,5 +90,9 @@ function SpeedCalculation()
             document.getElementById("speedName").innerHTML = "Result";
             document.getElementById("speedResult").innerHTML = "N/A";
         }
+
+        //result div show
+        _cmnHideElement("OutputInfo");
+        _cmnShowElement("OutputResult", "flex");
     }
 }
