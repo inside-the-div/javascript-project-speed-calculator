@@ -1,27 +1,27 @@
 function ValidateSpeedCalculatorForm()
 {
-    RemoveAllErrorMessage();
+    _cmnRemoveAllErrorMessage();
     var validDistance = true, validTime = true, validSpeed = true;
     var distance = document.getElementById("distance").value;
     var time = document.getElementById("time").value;
     var speed = document.getElementById("speed").value;
 
  
-    if(IsInputFieldEmpty("distance") || (isNaN(distance) && distance <= 0))
+    if(_cmnIsInputFieldEmpty("distance") || (isNaN(distance) && distance <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("distance", "Enter correct value.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("distance", "Enter correct value.");
         validDistance = false;
     }
     
-    if(IsInputFieldEmpty("time") || (isNaN(time) && time <= 0))
+    if(_cmnIsInputFieldEmpty("time") || (isNaN(time) && time <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("time", "Enter correct value.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("time", "Enter correct value.");
         validTime = false;
     }   
     
-    if(IsInputFieldEmpty("speed") || (isNaN(speed) && speed <= 0))
+    if(_cmnIsInputFieldEmpty("speed") || (isNaN(speed) && speed <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("speed", "Enter correct value.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("speed", "Enter correct value.");
         validSpeed = false;
     }   
 
@@ -31,7 +31,7 @@ function ValidateSpeedCalculatorForm()
         || validTime == true && validSpeed == true
       )
     {
-        RemoveAllErrorMessage();
+        _cmnRemoveAllErrorMessage();
         return true;
     }
 
@@ -44,7 +44,7 @@ function ResetSpeedCalculator()
     document.getElementById("time").value = "";
     document.getElementById("speed").value = "";
     
-    RemoveAllErrorMessage();
+    _cmnRemoveAllErrorMessage();
 
     _cmnHideElement("OutputResult");
     _cmnShowElement("OutputInfo", "flex");
