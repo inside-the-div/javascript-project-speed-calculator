@@ -1,7 +1,7 @@
 <h1>JavaScript Simple Project With Souce Code - Speed Calculator</h1>
 <p>A JavaScript speed calculator is a type of speed calculator that converts the speed in km/h to a fraction of the speed of light. 
 This calculator takes the speed in km/h as input and then calculates the equivalent speed as a fraction of the speed of light.
-<a target="_blank" href="https://toolbot.net"><b>Read more</b></a>
+<a target="_blank" href="https://www.insidethediv.com/javascript-simple-projects-with-source-code-speed-calculator"><b>Read more</b></a>
 </p>
 
 <p>
