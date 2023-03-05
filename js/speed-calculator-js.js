@@ -36,14 +36,16 @@ function ValidateSpeedCalculatorForm(distance,time,speed)
 
 function ResetSpeedCalculator()
 {
-    document.getElementById("distance").value = "";
-    document.getElementById("time").value = "";
-    document.getElementById("speed").value = "";
-    
-    _cmnRemoveAllErrorMessage();
+    if(confirm("Are you sure want to reset?")){
+         document.getElementById("distance").value = "";
+        document.getElementById("time").value = "";
+        document.getElementById("speed").value = "";
+        
+        _cmnRemoveAllErrorMessage();
 
-    _cmnHideElement("OutputResult");
-    _cmnShowElement("OutputInfo", "flex");
+        _cmnHideElement("OutputResult");
+        _cmnShowElement("OutputInfo", "flex");
+    }
 }
 
 function CalculateSpeed()
