@@ -22,3 +22,19 @@ You can check this project live <a target="_blank" href="https://toolbot.net/spe
     <li><a target="_blank" href="https://insidethediv.com/javascript-simple-projects-beginners-online-stopwatch-full-screen">javascript Projects StopWatch</a></li>
     <li><a target="_blank" href="https://insidethediv.com/javascript-simple-projects-with-source-code-online-timer-app">javascript Projects Timer</a></li>
 </ul>
+
+<h2>Special Thanks To...</h2>
+<ul>
+    <li>
+        <h3>Nasir Khan</h3>
+        <h4>Software Engineer</h4>
+        <h5>Linkedin Profile: <a href="https://www.linkedin.com/in/nasir-khan-922617212/">Nasir Khan</a></h5>
+        <img src="https://www.insidethediv.com/public/assets/admin/img/post/nasir-khan-logn-hair.jpeg" alt="Nasir Khan in Long Hair">
+    </li>
+    <li>
+        <h3>Kamrul Hasan</h3>
+        <h4>Web Developer</h4>
+        <h5>Linkedin Profile: <a href="https://www.linkedin.com/in/kamrul-hasan100/">Kamrul Hasan</a></h5>
+        <img src="https://www.insidethediv.com/public/assets/admin/img/post/Author-Kamrul-Hasan.jpg" alt="Kamrul Hasan Web Developer">
+    </li>
+</ul>
