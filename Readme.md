@@ -29,7 +29,7 @@ You can check this project live <a target="_blank" href="https://toolbot.net/spe
         <h3>Nasir Khan</h3>
         <h4>Software Engineer</h4>
         <h5>Linkedin Profile: <a href="https://www.linkedin.com/in/nasir-khan-922617212/">Nasir Khan</a></h5>
-        <img src="https://www.insidethediv.com/public/assets/admin/img/post/nasir-khan-logn-hair.jpeg" alt="Nasir Khan in Long Hair">
+        <img src="https://www.insidethediv.com/public/assets/admin/img/post/nasir-khan-in-logn-hair.jpeg" alt="Nasir Khan in Long Hair">
     </li>
     <li>
         <h3>Kamrul Hasan</h3>
