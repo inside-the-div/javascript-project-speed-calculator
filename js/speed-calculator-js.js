@@ -3,29 +3,39 @@ function ValidateSpeedCalculatorForm(distance,time,speed)
     _cmnRemoveAllErrorMessage();
     var validDistance = true, validTime = true, validSpeed = true;
  
-    if(distance =="" || (!isNaN(distance) && distance <= 0))
+    if(distance == "" || distance <= 0)
     {
         _cmnShowErrorMessageBottomOfTheInputFiled("distance", "Enter correct value.");
         validDistance = false;
     }
     
-    if(time == "" || (!isNaN(time) && time <= 0))
+    if(time == "" || time <= 0)
     {
         _cmnShowErrorMessageBottomOfTheInputFiled("time", "Enter correct value.");
         validTime = false;
     }   
     
-    if(speed == "" || (!isNaN(speed) && speed <= 0))
+    if(speed == "" || speed <= 0)
     {
         _cmnShowErrorMessageBottomOfTheInputFiled("speed", "Enter correct value.");
         validSpeed = false;
-    }   
+    }  
 
-    if(
-        validDistance == true && validSpeed == true 
-        || validDistance == true && validTime == true 
-        || validTime == true && validSpeed == true
-      )
+
+    if(validDistance == true && validSpeed == true && validTime == true){
+
+        if(speed.toFixed(2) == (distance / time).toFixed(2)){
+            _cmnRemoveAllErrorMessage();
+            return true;
+        }else{
+            _cmnShowErrorMessageBottomOfTheInputFiled("speed", "Enter correct value.");
+            _cmnShowErrorMessageBottomOfTheInputFiled("time", "Enter correct value.");
+            _cmnShowErrorMessageBottomOfTheInputFiled("distance", "Enter correct value.");
+        }
+
+    }else if(validDistance == true && validSpeed == true || 
+            validDistance == true && validTime == true || 
+            validTime == true && validSpeed == true)
     {
         _cmnRemoveAllErrorMessage();
         return true;
@@ -50,11 +60,12 @@ function ResetSpeedCalculator()
 
 function CalculateSpeed()
 {
-    var distance = document.getElementById("distance").value;
-    var time = document.getElementById("time").value;
-    var speed = document.getElementById("speed").value;
+    var distance = Number(document.getElementById("distance").value);
+    var time = Number(document.getElementById("time").value);
+    var speed = Number(document.getElementById("speed").value);
     
-    let calculatedSpeed, calculatedTime, calculatedDistance;
+    var calculatedSpeed, calculatedTime, calculatedDistance;
+
 
     if(ValidateSpeedCalculatorForm(distance,time,speed))
     {
