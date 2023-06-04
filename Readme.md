@@ -1,4 +1,4 @@
-<h1>JavaScript Simple Project With Souce Code - Speed Calculator</h1>
+<h1>JavaScript Simple Project With Source Code - Speed Calculator</h1>
 <p>A speed calculator is a tool that calculates the speed of an object or vehicle based on the distance traveled and the time taken to cover that distance.
 <a target="_blank" href="https://www.insidethediv.com/javascript-simple-projects-with-source-code-speed-calculator"><b>Read more</b></a>
 </p>
