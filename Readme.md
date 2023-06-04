@@ -8,6 +8,8 @@ This type of calculator is often used in science and physics education to help s
 It can also be a fun tool for anyone interested in science and physics to play around with and see how fast they can go relative to the speed of light.
 You can check this project live <a target="_blank" href="https://toolbot.net/speed-calculator">here</a> .</p>
 
+<h2>Simple JavaScript Projects List</h2>
+
 <p>
     Developing a simple JavaScript project is one of the best ways to learn javascript for a beginner. Hence if you are a beginner in javascript we are suggesting you develop some simple projects using the basic functionality of javascript. Here are some simple javascript projects for beginners with source code. Go through each link and read the technique. Also, if you want you can download the complete source code.
 </p>
