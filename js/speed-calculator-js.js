@@ -5,19 +5,19 @@ function ValidateSpeedCalculatorForm(distance,time,speed)
  
     if(distance == "" || distance <= 0)
     {
-        _cmnShowErrorMessageBottomOfTheInputFiled("distance", "Enter correct value.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("Distance", "Enter correct value.");
         validDistance = false;
     }
     
     if(time == "" || time <= 0)
     {
-        _cmnShowErrorMessageBottomOfTheInputFiled("time", "Enter correct value.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("Time", "Enter correct value.");
         validTime = false;
     }   
     
     if(speed == "" || speed <= 0)
     {
-        _cmnShowErrorMessageBottomOfTheInputFiled("speed", "Enter correct value.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("Speed", "Enter correct value.");
         validSpeed = false;
     }  
 
@@ -28,9 +28,9 @@ function ValidateSpeedCalculatorForm(distance,time,speed)
             _cmnRemoveAllErrorMessage();
             return true;
         }else{
-            _cmnShowErrorMessageBottomOfTheInputFiled("speed", "Enter correct value.");
-            _cmnShowErrorMessageBottomOfTheInputFiled("time", "Enter correct value.");
-            _cmnShowErrorMessageBottomOfTheInputFiled("distance", "Enter correct value.");
+            _cmnShowErrorMessageBottomOfTheInputFiled("Speed", "Enter correct value.");
+            _cmnShowErrorMessageBottomOfTheInputFiled("Time", "Enter correct value.");
+            _cmnShowErrorMessageBottomOfTheInputFiled("Distance", "Enter correct value.");
         }
 
     }else if(validDistance == true && validSpeed == true || 
@@ -47,9 +47,9 @@ function ValidateSpeedCalculatorForm(distance,time,speed)
 function ResetSpeedCalculator()
 {
     if(confirm("Are you sure want to reset?")){
-         document.getElementById("distance").value = "";
-        document.getElementById("time").value = "";
-        document.getElementById("speed").value = "";
+         document.getElementById("Distance").value = "";
+        document.getElementById("Time").value = "";
+        document.getElementById("Speed").value = "";
         
         _cmnRemoveAllErrorMessage();
 
@@ -60,53 +60,58 @@ function ResetSpeedCalculator()
 
 function CalculateSpeed()
 {
-    var distance = Number(document.getElementById("distance").value);
-    var time = Number(document.getElementById("time").value);
-    var speed = Number(document.getElementById("speed").value);
+    var distanceInputFiled = document.getElementById("Distance");
+    var timeInputFiled = document.getElementById("Time");
+    var speedInputFiled = document.getElementById("Speed");
+
+    var showDistanceDiv = document.getElementById("ShowDistance");
+    var showTimeDiv = document.getElementById("ShowTime");
+    var showSpeedDiv = document.getElementById("ShowSpeed");
+
+    var distance = Number(distanceInputFiled.value);
+    var time = Number(timeInputFiled.value);
+    var speed = Number(speedInputFiled.value);
     
     var calculatedSpeed, calculatedTime, calculatedDistance;
 
 
     if(ValidateSpeedCalculatorForm(distance,time,speed))
     {
-        _cmnHideElement("speedResult");
-        _cmnHideElement("distanceResult");
-        _cmnHideElement("timeResult");
+
+        showDistanceDiv.innerHTML   = `Distance = `+ distance + `km`;
+        showTimeDiv.innerHTML       = `Time = `+ time + `h`;
+        showSpeedDiv.innerHTML      = `Speed = `+ speed + `km/h`;
+
+
         if(distance == "")
         {
             calculatedDistance = speed * time;
-            document.getElementById("distance").value = Number(calculatedDistance).toFixed(2);
-            document.getElementById("distance").focus();
-            document.getElementById("calculatedDisstanceResult").innerHTML = Number(calculatedDistance).toFixed(2);
-            _cmnShowElement("distanceResult", "flex");
-        }
-        else if(speed == "")
-        {
-            calculatedSpeed = distance / time;
-            document.getElementById("speed").value = Number(calculatedSpeed).toFixed(2);
-            document.getElementById("speed").focus();
-            document.getElementById("calculatedSpeedResult").innerHTML = Number(calculatedSpeed).toFixed(2);
-            _cmnShowElement("speedResult", "flex");
+            calculatedDistance = calculatedDistance.toFixed(2);
+
+            distanceInputFiled.value = calculatedDistance;
+            distanceInputFiled.focus();
+            showDistanceDiv.innerHTML = `Distance = `+ calculatedDistance + `km`;
         }
         else if(time == "")
         {
             calculatedTime = distance / speed;
-            document.getElementById("time").value = Number(calculatedTime).toFixed(2);
-            document.getElementById("time").focus();
-            document.getElementById("calculatedTimeResult").innerHTML = Number(calculatedTime).toFixed(2);
-            _cmnShowElement("timeResult", "flex");
+            calculatedTime = calculatedTime.toFixed(2);
+
+            timeInputFiled.value = calculatedTime;
+            timeInputFiled.focus();
+            showTimeDiv.innerHTML = `Time = `+ calculatedTime + `h`;
         }
-        else
+        else if(speed == "")
         {
-            document.getElementById("calculatedDisstanceResult").innerHTML = distance;
-            document.getElementById("calculatedSpeedResult").innerHTML = speed;
-            document.getElementById("calculatedTimeResult").innerHTML = time;
-            _cmnShowElement("distanceResult", "flex");
-            _cmnShowElement("speedResult", "flex");
-            _cmnShowElement("timeResult", "flex");
+            calculatedSpeed = distance / time;
+            calculatedSpeed = calculatedSpeed.toFixed(2);
+
+            speedInputFiled.value = calculatedSpeed;
+            speedInputFiled.focus();
+            showSpeedDiv.innerHTML = `Speed = `+ calculatedSpeed + `km/h`;
         }
 
-        //result div show
+        //show result div
         _cmnHideElement("OutputInfo");
         _cmnShowElement("OutputResult", "flex");
     }
